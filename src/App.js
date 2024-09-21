@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import WeatherApp from './Projects/WeatherApp';
+import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
+import CardComponent from './Components/CardComponent';
+import HomeComponent from './Components/HomeComponent';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='App'>
+      <h1>My Multi Projects Dashboard</h1> 
+         <Routes>
+          <Route path="/" element={<HomeComponent/>}/>
+        <Route path="/project-a" element={<WeatherApp />} />
+      </Routes> 
+      </div>
+      
+    </Router>
+  
   );
 }
 
